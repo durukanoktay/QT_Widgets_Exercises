@@ -3,7 +3,8 @@
 
 #include <QDialog>
 #include <QMessageBox>
-
+#include <QDebug>
+#include <QDateTime>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Dialog;
@@ -20,6 +21,9 @@ public:
 
 private slots:
     void on_accept_clicked();
+    void doStuff();
+
+    void on_btnEdittor_clicked();
 
 private:
     Ui::Dialog *ui;

@@ -26,6 +26,7 @@ class Ui_Dialog
 {
 public:
     QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QLabel *label;
@@ -34,6 +35,10 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *accept;
     QPushButton *close;
+    QVBoxLayout *verticalLayout_3;
+    QPushButton *btnEdittor;
+    QPushButton *btnConnect;
+    QPushButton *btnInternal;
 
     void setupUi(QDialog *Dialog)
     {
@@ -42,10 +47,12 @@ public:
         Dialog->resize(608, 315);
         widget = new QWidget(Dialog);
         widget->setObjectName("widget");
-        widget->setGeometry(QRect(110, 10, 255, 141));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        widget->setGeometry(QRect(110, 10, 350, 143));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(widget);
@@ -81,6 +88,29 @@ public:
         verticalLayout_2->addLayout(horizontalLayout);
 
 
+        horizontalLayout_2->addLayout(verticalLayout_2);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        btnEdittor = new QPushButton(widget);
+        btnEdittor->setObjectName("btnEdittor");
+
+        verticalLayout_3->addWidget(btnEdittor);
+
+        btnConnect = new QPushButton(widget);
+        btnConnect->setObjectName("btnConnect");
+
+        verticalLayout_3->addWidget(btnConnect);
+
+        btnInternal = new QPushButton(widget);
+        btnInternal->setObjectName("btnInternal");
+
+        verticalLayout_3->addWidget(btnInternal);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_3);
+
+
         retranslateUi(Dialog);
         QObject::connect(close, &QPushButton::clicked, Dialog, qOverload<>(&QDialog::reject));
 
@@ -93,6 +123,9 @@ public:
         label->setText(QCoreApplication::translate("Dialog", "Ad\304\261n\304\261z\304\261 girin", nullptr));
         accept->setText(QCoreApplication::translate("Dialog", "Kabul ediyorum", nullptr));
         close->setText(QCoreApplication::translate("Dialog", "reddediyorum", nullptr));
+        btnEdittor->setText(QCoreApplication::translate("Dialog", "Editor", nullptr));
+        btnConnect->setText(QCoreApplication::translate("Dialog", "Connect", nullptr));
+        btnInternal->setText(QCoreApplication::translate("Dialog", "Internal", nullptr));
     } // retranslateUi
 
 };

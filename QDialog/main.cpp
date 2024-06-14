@@ -1,5 +1,6 @@
 #include "dialog.h"
-
+#include <QDebug>
+#include <QDateTime>
 #include <QApplication>
 // QTDialog inherits QTWidget
 int main(int argc, char *argv[])
